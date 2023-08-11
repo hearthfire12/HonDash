@@ -7,15 +7,12 @@ WAIT_FOR_RECONNECTION = 100
 class Ecu:
     def __init__(self):
         self.retries = 0
-        try:
-            kpro = Kpro()
-            if kpro.status:
-                self.ecu = kpro
-            else:
-                s300 = S300()
-                self.ecu = s300 if s300.status else None
-        except:
-            self.ecu = None
+        kpro = Kpro()
+        if kpro.status:
+            self.ecu = kpro
+        else:
+            s300 = S300()
+            self.ecu = s300 if s300.status else None
 
     def _get_value_from_ecu(self, value, fallback=0):
         if self.ecu is not None and self.ecu.status:
