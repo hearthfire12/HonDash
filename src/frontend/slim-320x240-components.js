@@ -13,28 +13,6 @@ var odo = new Text({
   style: "italic",
   textAlign: "center"
 });
-var version = new Text({
-  id: "version",
-  value: "",
-  size: 1,
-  style: "italic",
-  prefix: "HonDash v ",
-  textAlign: "right"
-});
-var ecu_name = new Text({
-  id: "ecu_name",
-  value: "",
-  size: 1,
-  style: "italic",
-  textAlign: "right",
-  suffix: " v"
-});
-var firmware_version = new Text({
-  id: "firmware_version",
-  value: "",
-  size: 1,
-  style: "italic"
-});
 
 // Icons
 var icon1 = new Icon({ id: "icon1" });
