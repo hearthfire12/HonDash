@@ -130,7 +130,8 @@
             "type":"string",
             "enum":[
                "basic",
-               "animalillo"
+               "animalillo",
+               "slim"
             ],
             "options":{
                "grid_columns":4
