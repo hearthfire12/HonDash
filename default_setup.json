@@ -22,16 +22,16 @@
   },
   "rpm": {
     "tag": "bar1",
-    "max": 9000,
+    "max": 8000,
     "sectors": [
       {
-        "lo": 8000,
-        "hi": 9000,
+        "lo": 7000,
+        "hi": 8000,
         "color": "#d9414c"
       },
       {
         "lo": 6000,
-        "hi": 8000,
+        "hi": 7000,
         "color": "#ffc81b"
       },
       {
@@ -42,7 +42,7 @@
     ]
   },
   "eth": {
-    "tag": "gauge4",
+    "tag": "not use",
     "label": "ETH",
     "suffix": "",
     "max": 100,
@@ -59,7 +59,7 @@
     "unit": "kmh"
   },
   "cam": {
-    "tag": "gauge7",
+    "tag": "not use",
     "label": "CAM",
     "suffix": "",
     "max": 100,
@@ -91,7 +91,7 @@
     ]
   },
   "tps": {
-    "tag": "gauge8",
+    "tag": "not use",
     "label": "TPS",
     "suffix": "",
     "max": 100,
@@ -162,7 +162,7 @@
     ]
   },
   "map": {
-    "tag": "gauge5",
+    "tag": "not use",
     "unit": "bar",
     "decimals": 1,
     "label": "MAP",
@@ -177,7 +177,7 @@
     ]
   },
   "an0": {
-    "tag": "not use",
+    "tag": "gauge4",
     "formula": "custom",
     "min_voltage": 0,
     "max_voltage": 5,
@@ -191,7 +191,7 @@
     "sectors": []
   },
   "an1": {
-    "tag": "not use",
+    "tag": "gauge5",
     "formula": "custom",
     "min_voltage": 0,
     "max_voltage": 5,
