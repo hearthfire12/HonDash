@@ -47,33 +47,33 @@ var icon3 = new Vtec({ id: "icon3" });
 // Gauges
 var gauge1 = new Gauge({
   id: "gauge1",
-  valueMinFontSize: 20,
-  labelMinFontSize: 10,
+  valueMinFontSize: 12,
+  labelMinFontSize: 6,
 });
 var gauge2 = new Gauge({
   id: "gauge2",
-  valueMinFontSize: 20,
-  labelMinFontSize: 10,
+  valueMinFontSize: 12,
+  labelMinFontSize: 6,
 });
 var gauge3 = new Gauge({
   id: "gauge3",
-  valueMinFontSize: 20,
-  labelMinFontSize: 10,
+  valueMinFontSize: 12,
+  labelMinFontSize: 6,
 });
 var gauge4 = new Gauge({
   id: "gauge4",
-  valueMinFontSize: 20,
-  labelMinFontSize: 10,
+  valueMinFontSize: 12,
+  labelMinFontSize: 6,
 });
 var gauge5 = new Gauge({
   id: "gauge5",
-  valueMinFontSize: 20,
-  labelMinFontSize: 10,
+  valueMinFontSize: 12,
+  labelMinFontSize: 6,
 });
 var gauge6 = new Gauge({
   id: "gauge6",
-  valueMinFontSize: 20,
-  labelMinFontSize: 10,
+  valueMinFontSize: 12,
+  labelMinFontSize: 6,
 });
 
 // Background
