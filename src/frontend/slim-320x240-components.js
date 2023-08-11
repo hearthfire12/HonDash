@@ -5,14 +5,14 @@ var bar1 = new Bar({ id: "bar1", isVertical: true, textSize: 8 });
 var time = new Text({
   id: "time",
   value: "00:00:00",
-  size: 1,
+  size: 3,
   style: "italic",
   textAlign: "center"
 });
 var odo = new Text({
   id: "odo",
   value: "0",
-  size: 1,
+  size: 3,
   style: "italic",
   textAlign: "center"
 });
@@ -27,7 +27,7 @@ var version = new Text({
 var ecu_name = new Text({
   id: "ecu_name",
   value: "",
-  size: 0.3,
+  size: 1,
   style: "italic",
   textAlign: "right",
   suffix: " v"
@@ -35,7 +35,7 @@ var ecu_name = new Text({
 var firmware_version = new Text({
   id: "firmware_version",
   value: "",
-  size: 0.3,
+  size: 1,
   style: "italic"
 });
 
@@ -47,33 +47,33 @@ var icon3 = new Vtec({ id: "icon3" });
 // Gauges
 var gauge1 = new Gauge({
   id: "gauge1",
-  valueMinFontSize: 12,
-  labelMinFontSize: 6,
+  valueMinFontSize: 24,
+  labelMinFontSize: 8,
 });
 var gauge2 = new Gauge({
   id: "gauge2",
-  valueMinFontSize: 12,
-  labelMinFontSize: 6,
+  valueMinFontSize: 24,
+  labelMinFontSize: 8,
 });
 var gauge3 = new Gauge({
   id: "gauge3",
-  valueMinFontSize: 12,
-  labelMinFontSize: 6,
+  valueMinFontSize: 24,
+  labelMinFontSize: 8,
 });
 var gauge4 = new Gauge({
   id: "gauge4",
-  valueMinFontSize: 12,
-  labelMinFontSize: 6,
+  valueMinFontSize: 24,
+  labelMinFontSize: 8,
 });
 var gauge5 = new Gauge({
   id: "gauge5",
-  valueMinFontSize: 12,
-  labelMinFontSize: 6,
+  valueMinFontSize: 24,
+  labelMinFontSize: 8,
 });
 var gauge6 = new Gauge({
   id: "gauge6",
-  valueMinFontSize: 12,
-  labelMinFontSize: 6,
+  valueMinFontSize: 24,
+  labelMinFontSize: 8,
 });
 
 // Background
