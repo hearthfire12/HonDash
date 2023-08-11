@@ -1,4 +1,4 @@
-const SCREENS = ["basic.html", "animalillo.html", "slim.html", "datalogs"];
+const SCREENS = ["basic.html", "animalillo.html", "slim-320x240.html", "datalogs"];
 const DEBUG_SCREENS = ["debug/websocket.html", "debug/raw.html"];
 
 function nextScreen(screens) {
