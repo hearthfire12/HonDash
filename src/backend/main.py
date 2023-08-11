@@ -5,7 +5,7 @@ from backend.devices.odometer import Odometer
 from backend.devices.setup_file import SetupFile
 from backend.devices.setup_validator.setup_validator import SetupValidator
 from backend.devices.style import Style
-from backend.devices.time import CurrentTime
+from backend.devices.time import CurrentLocalTime
 from backend.websocket import Websocket
 from version import __version__
 
@@ -24,7 +24,7 @@ class Backend:
         self.websocket = Websocket(self)
 
     def _init_resources(self):
-        self.time = CurrentTime()
+        self.time = CurrentLocalTime()
         self.odo = Odometer(
             self.setup_file.get_value("odo").get("value"),
             self.setup_file.get_value("odo").get("unit"),
