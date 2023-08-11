@@ -18,6 +18,9 @@ function nextScreen(screens) {
 }
 
 document.addEventListener("keydown", function(event) {
+
+    document.getElementById("dbg").textContent = event.key;
+
   if (event.key == "0") {
     ws.send(JSON.stringify({ action: "toggle_datalog" }));
   } else if (event.key == "1") {
