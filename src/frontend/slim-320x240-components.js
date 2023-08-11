@@ -1,5 +1,5 @@
 // Bars
-var bar1 = new Bar({ id: "bar1", isVertical: true, textSize: 8 });
+var bar1 = new Bar({ id: "bar1", isVertical: true, textSize: 12 });
 
 // Text and numbers
 var time = new Text({
