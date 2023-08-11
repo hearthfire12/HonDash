@@ -1,7 +1,7 @@
 class Icon {
   constructor(args) {
     this.element = document.getElementById(args.id);
-    this.pathOff = "";
+    this.pathOff = "default_off.svg";
     this.pathOn = "";
     var img = document.createElement("img");
     img.src = "icons/" + this.pathOff;
