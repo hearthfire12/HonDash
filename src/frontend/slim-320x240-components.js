@@ -19,7 +19,7 @@ var odo = new Text({
 var version = new Text({
   id: "version",
   value: "",
-  size: 0.3,
+  size: 1,
   style: "italic",
   prefix: "HonDash v ",
   textAlign: "right"
