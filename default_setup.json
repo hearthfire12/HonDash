@@ -1,5 +1,5 @@
 {
-  "template": "slim-320x240",
+  "template": "320x240",
   "screen": {
     "rotate": false
   },

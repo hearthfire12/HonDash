@@ -131,7 +131,7 @@
             "enum":[
                "basic",
                "animalillo",
-               "slim-320x240"
+               "320x240"
             ],
             "options":{
                "grid_columns":4
