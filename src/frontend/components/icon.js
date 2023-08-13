@@ -3,19 +3,16 @@ class Icon {
     this.element = document.getElementById(args.id);
     this.pathOff = args.pathOff || "";
     this.pathOn = args.pathOff || "";
-    this.scale = args.scale;
+    this.width = args.width;
     var img = document.createElement("img");
     img.src = "icons/" + this.pathOff;
-    img.style.width = "100%";
-    img.style.transform = `scale(${this.scale || 1})`;
+    img.style.width = this.width || "100%"
     this.element.appendChild(img);
   }
 
   refresh(value) {
     var img = document.createElement("img");
-    img.style.width = "100%";
-    img.style.transform = `scale(${this.scale || 1})`;
-    img.src = "icons/" + (value > 0 ? this.pathOn : this.pathOff);
+    img.style.width = this.width || "100%"
     this.element.innerHTML = "";
     this.element.appendChild(img);
   }
