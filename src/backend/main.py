@@ -1,4 +1,6 @@
+from backend.constants import websocket_data_dict
 from backend.devices.ecu import Ecu
+from backend.devices.logger.logger import Logger
 from backend.devices.odometer import Odometer
 from backend.devices.setup_file import SetupFile
 from backend.devices.setup_validator.setup_validator import SetupValidator
@@ -13,6 +15,7 @@ class Backend:
         self._load_user_preferences()
         self._init_resources()
         self._init_websocket()
+        self.logger = Logger(self.setup_file.json.get("hddlg").get("autostart"))
 
     def stop(self):
         self.websocket.stop()
@@ -82,83 +85,24 @@ class Backend:
             return formula(**args)
 
     def update(self):
-        """ load the websocket with updated info """
+        """load the websocket with updated info"""
         if self.odo.save(self.ecu.vss["kmh"]):
             self.setup_file.update_key("odo", {"value": self.odo.preferred_mileage})
         self.style.update(self.ecu.tps)
-        return {
-            "bat": self.ecu.bat,
-            "gear": self.ecu.gear,
-            "iat": self.ecu.iat[self.iat_unit],
-            "tps": self.ecu.tps,
-            "ect": self.ecu.ect[self.ect_unit],
-            "rpm": self.ecu.rpm,
-            "vss": self.ecu.vss[self.vss_unit],
-            "o2": self.ecu.o2[self.o2_unit],
-            "cam": self.ecu.cam,
-            "mil": self.ecu.mil,
-            "fan": self.ecu.fanc,
-            "bksw": self.ecu.bksw,
-            "flr": self.ecu.flr,
-            "eth": self.ecu.eth,
-            "scs": self.ecu.scs,
-            "fmw": self.ecu.firmware,
-            "map": self.ecu.map[self.map_unit],
-            "an0": self._call_analog_input(0),
-            "an1": self._call_analog_input(1),
-            "an2": self._call_analog_input(2),
-            "an3": self._call_analog_input(3),
-            "an4": self._call_analog_input(4),
-            "an5": self._call_analog_input(5),
-            "an6": self._call_analog_input(6),
-            "an7": self._call_analog_input(7),
-            "time": self.time.get_time(),
-            "odo": self.odo.preferred_mileage,
-            "style": self.style.status,
-            "name": self.ecu.name,
-            "ver": __version__,
-            #AJ Addins below:
-            "acsw": self.ecu.acsw,
-            "accl": self.ecu.accl,
-            "inj": self.ecu.inj,
-            "injduty": self.ecu.injduty,
-            "igadv": self.ecu.igadv,
-            "pho2sv": self.ecu.pho2sv,
-            "strim": self.ecu.strim,
-            "ltrim": self.ecu.ltrim,
-            "iatc": self.ecu.iatc,
-            "ectc": self.ecu.ectc,
-            "wbv": self.ecu.wbv,
-            "egrlv": self.ecu.egrlv,
-            "b6v": self.ecu.b6v,
-            "baro": self.ecu.baro,
-            "eld": self.ecu.eld,
-            "psp": self.ecu.psp,
-            "vtp": self.ecu.vtp,
-            "a10": self.ecu.a10,
-            "cl": self.ecu.cl,
-            "altc": self.ecu.altc,
-            "iab": self.ecu.iab,
-            "pcs": self.ecu.pcs,
-            "vts": self.ecu.vts,
-            "n1arm": self.ecu.n1arm,
-            "n1on": self.ecu.n1on,
-            "n2arm": self.ecu.n2arm,
-            "n2on": self.ecu.n2on,
-            "n3arm": self.ecu.n3arm,
-            "n3on": self.ecu.n3on,
-            "disterr": self.ecu.disterr,
-            "sectbl": self.ecu.sectbl,
-            "secinj": self.ecu.secinj,
-            "revl": self.ecu.revl,
-            "lnchc": self.ecu.lnchc,
-            "lnchr": self.ecu.lnchr,
-            "bstc": self.ecu.bstc,
-            "shftc": self.ecu.shftc,
-            "ignc": self.ecu.ignc,
-            "obdl": self.ecu.obdl,
-            "pwm": self.ecu.pwm
-        }
+        return websocket_data_dict(
+            self.ecu,
+            self.iat_unit,
+            self.ect_unit,
+            self.vss_unit,
+            self.o2_unit,
+            self.map_unit,
+            self._call_analog_input,
+            self.time.get_time(),
+            self.odo.preferred_mileage,
+            self.style.status,
+            __version__,
+            self.logger,
+        )
 
     def setup(self):
         """Return the current setup"""
