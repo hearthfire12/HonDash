@@ -17,7 +17,7 @@ var odo = new Text({
 // Icons
 var icon1 = new Icon({ id: "icon1", width: "50%", pathOff: "cl_off.png" });
 var icon2 = new Icon({ id: "icon2", width: "75%", pathOff: "sec_off.png" });
-var icon3 = new Vtec({ id: "icon3", width: "100%" });
+var icon3 = new Icon({ id: "icon3", width: "100%", pathOff: "vtec_off.png"});
 
 // Gauges
 var gauge1 = new Gauge({

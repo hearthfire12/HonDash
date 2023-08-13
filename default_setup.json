@@ -319,24 +319,20 @@
   "ver": {
     "tag": "version"
   },
+  "cl": {
+    "tag": "icon1",
+    "pathon": "cl_on.png",
+    "pathoff": "cl_off.png"
+  },
   "sectbl": {
     "tag": "icon2",
     "pathon": "sec_on.png",
     "pathoff": "sec_off.png"
   },
-  "cl": {
-    "tag": "icon1",
-    "pathon": "cl_on.png",
-    "pathoff": "cl_off.png",
-    "scale": "3"
-  },
-  "scs": {
-    "tag": "icon3",
-    "pathon": "scs_on.png",
-    "pathoff": "scs_off.png"
-  },
   "vtec": {
-    "tag": "icon4"
+    "tag": "icon3",
+    "pathon": "vtec_on.png",
+    "pathoff": "vtec_off.png"
   },
   "gear": {
     "tag": "gear"
