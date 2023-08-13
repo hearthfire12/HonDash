@@ -132,6 +132,7 @@
             "enum":[
                "basic",
                "animalillo",
+               "320x240",
                "allvals"
             ],
             "options":{
