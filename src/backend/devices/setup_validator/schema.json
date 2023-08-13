@@ -688,6 +688,8 @@
                }
             }
          },
+         "strim":{"$ref":"#/definitions/an"},
+         "ltrim":{"$ref":"#/definitions/an"},
          "an0":{"$ref":"#/definitions/an"},
          "an1":{"$ref":"#/definitions/an"},
          "an2":{"$ref":"#/definitions/an"},

@@ -176,8 +176,36 @@
       }
     ]
   },
-  "an0": {
+  "strim": {
     "tag": "gauge4",
+    "formula": "custom",
+    "min_voltage": 0,
+    "max_voltage": 5,
+    "min_value": 0,
+    "max_value": 100,
+    "unit": "per cent",
+    "decimals": 0,
+    "label": "S. TRIM",
+    "suffix": "%",
+    "max": 100,
+    "sectors": []
+  },
+  "ltrim": {
+    "tag": "gauge5",
+    "formula": "custom",
+    "min_voltage": 0,
+    "max_voltage": 5,
+    "min_value": 0,
+    "max_value": 100,
+    "unit": "per cent",
+    "decimals": 0,
+    "label": "L. TRIM",
+    "suffix": "%",
+    "max": 100,
+    "sectors": []
+  },
+  "an0": {
+    "tag": "not use",
     "formula": "custom",
     "min_voltage": 0,
     "max_voltage": 5,
@@ -191,7 +219,7 @@
     "sectors": []
   },
   "an1": {
-    "tag": "gauge5",
+    "tag": "not use",
     "formula": "custom",
     "min_voltage": 0,
     "max_voltage": 5,
@@ -291,15 +319,16 @@
   "ver": {
     "tag": "version"
   },
-  "fan": {
+  "sectbl": {
     "tag": "icon2",
-    "pathon": "fan_on.svg",
-    "pathoff": "fan_off.svg"
+    "pathon": "sec_on.png",
+    "pathoff": "sec_off.png"
   },
-  "mil": {
+  "cl": {
     "tag": "icon1",
-    "pathon": "check_engine_on.svg",
-    "pathoff": "check_engine_off.svg"
+    "pathon": "cl_on.png",
+    "pathoff": "cl_off.png",
+    "scale": "3"
   },
   "scs": {
     "tag": "icon3",
