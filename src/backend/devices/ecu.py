@@ -217,10 +217,6 @@ class Ecu:
     @property
     def psp(self):
         return self._get_value_from_ecu("psp", False)
-        
-    @property
-    def vtp(self):
-        return self._get_value_from_ecu("vtp", False)        
 
     @property
     def a10(self):
@@ -241,10 +237,6 @@ class Ecu:
     @property
     def pcs(self):
         return self._get_value_from_ecu("pcs", False)
-
-    @property
-    def vts(self):
-        return self._get_value_from_ecu("vts", False)
 
     @property
     def n1arm(self):
