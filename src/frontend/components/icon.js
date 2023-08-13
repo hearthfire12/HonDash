@@ -13,6 +13,7 @@ class Icon {
   refresh(value) {
     var img = document.createElement("img");
     img.style.width = this.width || "100%"
+    img.src = "icons/" + (value > 0 ? this.pathOn : this.pathOff);
     this.element.innerHTML = "";
     this.element.appendChild(img);
   }
