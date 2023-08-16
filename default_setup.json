@@ -72,7 +72,7 @@
     ]
   },
   "bat": {
-    "tag": "gauge6",
+    "tag": "not use",
     "decimals": 1,
     "label": "BATTERY",
     "suffix": "",
@@ -104,7 +104,7 @@
     ]
   },
   "iat": {
-    "tag": "gauge2",
+    "tag": "not use",
     "unit": "celsius",
     "label": "IAT",
     "suffix": "",
@@ -137,7 +137,7 @@
     ]
   },
   "o2": {
-    "tag": "gauge3",
+    "tag": "gauge6",
     "unit": "afr",
     "decimals": 1,
     "label": "AFR",
@@ -205,7 +205,7 @@
     "sectors": []
   },
   "an0": {
-    "tag": "not use",
+    "tag": "gauge2",
     "formula": "custom",
     "min_voltage": 0,
     "max_voltage": 5,
@@ -219,7 +219,7 @@
     "sectors": []
   },
   "an1": {
-    "tag": "not use",
+    "tag": "gauge3",
     "formula": "custom",
     "min_voltage": 0,
     "max_voltage": 5,
