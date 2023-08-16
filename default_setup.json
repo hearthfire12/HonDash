@@ -213,7 +213,7 @@
     "max_value": 10,
     "unit": "bar",
     "decimals": 0,
-    "label": "",
+    "label": "OIL P.",
     "suffix": "",
     "max": 10,
     "sectors": []
@@ -227,7 +227,7 @@
     "max_value": 100,
     "unit": "celsius",
     "decimals": 0,
-    "label": "",
+    "label": "OIL T.",
     "suffix": "",
     "max": 150,
     "sectors": []
