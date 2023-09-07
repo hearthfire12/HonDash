@@ -20,57 +20,6 @@
     "unit": "km",
     "value": 0
   },
-  "rpm": {
-    "tag": "bar1",
-    "max": 8000,
-    "sectors": [
-      {
-        "lo": 7000,
-        "hi": 8000,
-        "color": "#d9414c"
-      },
-      {
-        "lo": 6000,
-        "hi": 7000,
-        "color": "#ffc81b"
-      },
-      {
-        "lo": 0,
-        "hi": 6000,
-        "color": "#21f973"
-      }
-    ]
-  },
-  "eth": {
-    "tag": "not use",
-    "label": "ETH",
-    "suffix": "",
-    "max": 100,
-    "sectors": [
-      {
-        "lo": 0,
-        "hi": 100,
-        "color": "#46877f"
-      }
-    ]
-  },
-  "vss": {
-    "tag": "speed",
-    "unit": "kmh"
-  },
-  "cam": {
-    "tag": "not use",
-    "label": "CAM",
-    "suffix": "",
-    "max": 100,
-    "sectors": [
-      {
-        "lo": 0,
-        "hi": 100,
-        "color": "#46877f"
-      }
-    ]
-  },
   "bat": {
     "tag": "not use",
     "decimals": 1,
@@ -136,8 +85,28 @@
       }
     ]
   },
+  "egrlv": {
+    "tag": "gauge2",
+    "unit": "celsius",
+    "label": "OIL T.",
+    "suffix": "",
+    "max": 150,
+    "sectors": [
+      {
+        "lo": 94,
+        "hi": 150,
+        "color": "#cc2c24"
+      },
+      {
+        "lo": 0,
+        "hi": 94,
+        "color": "#46877f"
+      }
+    ],
+	"decimals": 1
+  },
   "o2": {
-    "tag": "gauge6",
+    "tag": "not use",
     "unit": "afr",
     "decimals": 1,
     "label": "AFR",
@@ -177,35 +146,15 @@
     ]
   },
   "strim": {
-    "tag": "gauge4",
-    "formula": "custom",
-    "min_voltage": 0,
-    "max_voltage": 5,
-    "min_value": 0,
-    "max_value": 100,
-    "unit": "per cent",
-    "decimals": 0,
-    "label": "S. TRIM",
-    "suffix": "%",
-    "max": 100,
-    "sectors": []
+    "tag": "gauge3",
+    "label": "S. TRIM"
   },
   "ltrim": {
-    "tag": "gauge5",
-    "formula": "custom",
-    "min_voltage": 0,
-    "max_voltage": 5,
-    "min_value": 0,
-    "max_value": 100,
-    "unit": "per cent",
-    "decimals": 0,
-    "label": "L. TRIM",
-    "suffix": "%",
-    "max": 100,
-    "sectors": []
+    "tag": "gauge6",
+    "label": "S. TRIM"
   },
   "an0": {
-    "tag": "gauge3",
+    "tag": "gauge5",
     "formula": "custom",
     "min_voltage": 0.5,
     "max_voltage": 4.5,
@@ -219,101 +168,17 @@
     "sectors": []
   },
   "an1": {
-    "tag": "gauge2",
-    "formula": "aem_30_2012",
-    "min_voltage": 0,
-    "max_voltage": 5,
+    "tag": "gauge4",
+    "formula": "custom",
+    "min_voltage": 0.5,
+    "max_voltage": 4.5,
     "min_value": 0,
-    "max_value": 100,
-    "unit": "celsius",
-    "decimals": 0,
-    "label": "OIL T.",
+    "max_value": 10,
+    "unit": "bar",
+    "decimals": 1,
+    "label": "ECT P.",
     "suffix": "",
-    "max": 150,
-    "sectors": []
-  },
-  "an2": {
-    "tag": "not use",
-    "formula": "custom",
-    "min_voltage": 0,
-    "max_voltage": 5,
-    "min_value": 0,
-    "max_value": 100,
-    "unit": "per cent",
-    "decimals": 0,
-    "label": "",
-    "suffix": "%",
-    "max": 100,
-    "sectors": []
-  },
-  "an3": {
-    "tag": "not use",
-    "formula": "custom",
-    "min_voltage": 0,
-    "max_voltage": 5,
-    "min_value": 0,
-    "max_value": 100,
-    "unit": "per cent",
-    "decimals": 0,
-    "label": "",
-    "suffix": "%",
-    "max": 100,
-    "sectors": []
-  },
-  "an4": {
-    "tag": "not use",
-    "formula": "custom",
-    "min_voltage": 0,
-    "max_voltage": 5,
-    "min_value": 0,
-    "max_value": 100,
-    "unit": "per cent",
-    "decimals": 0,
-    "label": "",
-    "suffix": "%",
-    "max": 100,
-    "sectors": []
-  },
-  "an5": {
-    "tag": "not use",
-    "formula": "custom",
-    "min_voltage": 0,
-    "max_voltage": 5,
-    "min_value": 0,
-    "max_value": 100,
-    "unit": "per cent",
-    "decimals": 0,
-    "label": "",
-    "suffix": "%",
-    "max": 100,
-    "sectors": []
-  },
-  "an6": {
-    "tag": "not use",
-    "formula": "custom",
-    "min_voltage": 0,
-    "max_voltage": 5,
-    "min_value": 0,
-    "max_value": 100,
-    "unit": "per cent",
-    "decimals": 0,
-    "label": "",
-    "suffix": "",
-    "max": 100,
-    "sectors": []
-  },
-  "an7": {
-    "tag": "not use",
-    "formula": "custom",
-    "min_voltage": 0,
-    "max_voltage": 5,
-    "min_value": 0,
-    "max_value": 100,
-    "unit": "per cent",
-    "decimals": 0,
-    "label": "",
-    "suffix": "",
-    "max": 100,
+    "max": 10,
     "sectors": []
   },
   "ver": {
@@ -334,9 +199,6 @@
     "pathon": "vtec_on.png",
     "pathoff": "vtec_off.png"
   },
-  "gear": {
-    "tag": "gear"
-  },
   "hddlg": {
     "tag": "icon5",
     "pathon": "hddlg_on.svg",
@@ -352,14 +214,5 @@
   "version": "3.5.0",
   "name": {
     "tag": "ecu_name"
-  },
-  "inj": {
-    "tag": "inj"
-  },
-  "injduty": {
-    "tag": "injduty"
-  },
-  "igadv": {
-    "tag": "igadv"
   }
 }
