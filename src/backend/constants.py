@@ -15,6 +15,7 @@ def websocket_data_dict(
     style,
     version,
     logger,
+    ecu_analog_function
 ):
     return {
         "bat": ecu.bat,
@@ -64,7 +65,7 @@ def websocket_data_dict(
         "iatc": ecu.iatc,
         "ectc": ecu.ectc,
         "wbv": ecu.wbv,
-        "egrlv": ecu.egrlv,
+        "egrlv": ecu_analog_function("egrlv"),
         "b6v": ecu.b6v,
         "baro": ecu.baro,
         "eld": ecu.eld,

@@ -1,3 +1,5 @@
+import numpy as np
+
 class Formula:
     # Backup formula method to use when no formula is found
     @staticmethod
@@ -129,6 +131,44 @@ class Formula:
             - 28.49330639 * voltage
             + 104.9358479
         )
+        return {
+            "celsius": celsius,
+            "fahrenheit": Formula.celsius_to_fahrenheit(celsius),
+        }
+
+    @staticmethod
+    def prosport_temp_evo_jdm(voltage):
+        """
+        Prosport Coolant / Oil Temperature Sensor EVO / JDM
+        The spec:
+        https://prosportgauges.com/products/temperature-sender-evo-jdm
+        """
+
+        voltage_to_celsius_conversion = {
+            0.730: 160,
+            0.863: 150,
+            1.022: 140,
+            1.209: 130,
+            1.429: 120,
+            1.684: 110,
+            1.972: 100,
+            2.291: 90,
+            2.634: 80,
+            2.989: 70,
+            3.341: 60,
+            3.675: 50,
+            3.977: 40,
+            4.237: 30,
+            4.450: 20,
+            4.617: 10,
+        }
+
+        celsius = np.interp(
+            voltage,
+            list(voltage_to_celsius_conversion.keys()),
+            list(voltage_to_celsius_conversion.values())
+        )
+
         return {
             "celsius": celsius,
             "fahrenheit": Formula.celsius_to_fahrenheit(celsius),

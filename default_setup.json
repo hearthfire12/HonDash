@@ -52,6 +52,14 @@
       }
     ]
   },
+  "ectc": {
+    "tag": "gauge3",
+    "label": "ECT C."
+  },
+  "iatc": {
+    "tag": "gauge6",
+    "label": "IAT C."
+  },
   "iat": {
     "tag": "not use",
     "unit": "celsius",
@@ -87,8 +95,9 @@
   },
   "egrlv": {
     "tag": "gauge2",
-    "unit": "celsius",
     "label": "OIL T.",
+    "unit": "celsius",
+    "formula": "prosport_temp_evo_jdm",
     "suffix": "",
     "max": 150,
     "sectors": [
@@ -102,8 +111,7 @@
         "hi": 94,
         "color": "#46877f"
       }
-    ],
-	"decimals": 1
+    ]
   },
   "o2": {
     "tag": "not use",
@@ -146,11 +154,11 @@
     ]
   },
   "strim": {
-    "tag": "gauge3",
+    "tag": "not use",
     "label": "S. TRIM"
   },
   "ltrim": {
-    "tag": "gauge6",
+    "tag": "not use",
     "label": "S. TRIM"
   },
   "an0": {
@@ -181,16 +189,100 @@
     "max": 10,
     "sectors": []
   },
+  "an2": {
+    "tag": "not use",
+    "formula": "custom",
+    "min_voltage": 0,
+    "max_voltage": 5,
+    "min_value": 0,
+    "max_value": 100,
+    "unit": "per cent",
+    "decimals": 0,
+    "label": "",
+    "suffix": "",
+    "max": 100,
+    "sectors": []
+  },
+  "an3": {
+    "tag": "not use",
+    "formula": "custom",
+    "min_voltage": 0,
+    "max_voltage": 5,
+    "min_value": 0,
+    "max_value": 100,
+    "unit": "per cent",
+    "decimals": 0,
+    "label": "",
+    "suffix": "",
+    "max": 100,
+    "sectors": []
+  },
+  "an4": {
+    "tag": "not use",
+    "formula": "custom",
+    "min_voltage": 0,
+    "max_voltage": 5,
+    "min_value": 0,
+    "max_value": 100,
+    "unit": "per cent",
+    "decimals": 0,
+    "label": "",
+    "suffix": "",
+    "max": 100,
+    "sectors": []
+  },
+  "an5": {
+    "tag": "not use",
+    "formula": "custom",
+    "min_voltage": 0,
+    "max_voltage": 5,
+    "min_value": 0,
+    "max_value": 100,
+    "unit": "per cent",
+    "decimals": 0,
+    "label": "",
+    "suffix": "",
+    "max": 100,
+    "sectors": []
+  },
+  "an6": {
+    "tag": "not use",
+    "formula": "custom",
+    "min_voltage": 0,
+    "max_voltage": 5,
+    "min_value": 0,
+    "max_value": 100,
+    "unit": "per cent",
+    "decimals": 0,
+    "label": "",
+    "suffix": "",
+    "max": 100,
+    "sectors": []
+  },
+  "an7": {
+    "tag": "not use",
+    "formula": "custom",
+    "min_voltage": 0,
+    "max_voltage": 5,
+    "min_value": 0,
+    "max_value": 100,
+    "unit": "per cent",
+    "decimals": 0,
+    "label": "",
+    "suffix": "",
+    "max": 100,
+    "sectors": []
+  },
   "ver": {
     "tag": "version"
   },
   "cl": {
-    "tag": "icon1",
+    "tag": "not use",
     "pathon": "cl_on.png",
     "pathoff": "cl_off.png"
   },
   "sectbl": {
-    "tag": "icon2",
+    "tag": "not use",
     "pathon": "sec_on.png",
     "pathoff": "sec_off.png"
   },
@@ -199,10 +291,15 @@
     "pathon": "vtec_on.png",
     "pathoff": "vtec_off.png"
   },
+  "fan": {
+    "tag": "icon2",
+    "pathon": "fan_on.png",
+    "pathoff": "fan_off.png"
+  },
   "hddlg": {
-    "tag": "icon5",
-    "pathon": "hddlg_on.svg",
-    "pathoff": "hddlg_off.svg",
+    "tag": "icon1",
+    "pathon": "log_on.png",
+    "pathoff": "log_off.png",
     "autostart": false
   },
   "fmw": {

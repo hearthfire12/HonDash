@@ -62,6 +62,7 @@ class Backend:
         self.an5_unit = self.setup_file.json.get("an5", {}).get("unit", "volts")
         self.an6_unit = self.setup_file.json.get("an6", {}).get("unit", "volts")
         self.an7_unit = self.setup_file.json.get("an7", {}).get("unit", "volts")
+        self.egrlv_unit = self.setup_file.json.get("egrlv", {}).get("unit", "volts")
 
         self.an0_formula, self.an0_extra_params = self.setup_file.get_formula("an0")
         self.an1_formula, self.an1_extra_params = self.setup_file.get_formula("an1")
@@ -71,6 +72,7 @@ class Backend:
         self.an5_formula, self.an5_extra_params = self.setup_file.get_formula("an5")
         self.an6_formula, self.an6_extra_params = self.setup_file.get_formula("an6")
         self.an7_formula, self.an7_extra_params = self.setup_file.get_formula("an7")
+        self.egrlv_formula, self.egrlv_extra_params = self.setup_file.get_formula("egrlv")
 
     def _call_analog_input(self, port):
         voltage = self.ecu.analog_input(port)
@@ -79,6 +81,18 @@ class Backend:
 
         if extra_params is None:  # then is a specific formula
             return formula(voltage)[getattr(self, f"an{port}_unit")]
+        else:
+            args = {"voltage": voltage}
+            args.update(extra_params)
+            return formula(**args)
+
+    def _call_ecu_analog_input(self, port):
+        voltage = getattr(self.ecu, port)
+        extra_params = getattr(self, f"{port}_extra_params")
+        formula = getattr(self, f"{port}_formula")
+
+        if extra_params is None:  # then is a specific formula
+            return formula(voltage)[getattr(self, f"{port}_unit")]
         else:
             args = {"voltage": voltage}
             args.update(extra_params)
@@ -102,6 +116,7 @@ class Backend:
             self.style.status,
             __version__,
             self.logger,
+            self._call_ecu_analog_input
         )
 
     def setup(self):
