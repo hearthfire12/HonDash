@@ -63,6 +63,7 @@ class Backend:
         self.an6_unit = self.setup_file.json.get("an6", {}).get("unit", "volts")
         self.an7_unit = self.setup_file.json.get("an7", {}).get("unit", "volts")
         self.egrlv_unit = self.setup_file.json.get("egrlv", {}).get("unit", "volts")
+        self.b6v_unit = self.setup_file.json.get("b6v", {}).get("unit", "volts")
 
         self.an0_formula, self.an0_extra_params = self.setup_file.get_formula("an0")
         self.an1_formula, self.an1_extra_params = self.setup_file.get_formula("an1")
@@ -73,6 +74,7 @@ class Backend:
         self.an6_formula, self.an6_extra_params = self.setup_file.get_formula("an6")
         self.an7_formula, self.an7_extra_params = self.setup_file.get_formula("an7")
         self.egrlv_formula, self.egrlv_extra_params = self.setup_file.get_formula("egrlv")
+        self.b6v_formula, self.b6v_extra_params = self.setup_file.get_formula("b6v")
 
     def _call_analog_input(self, port):
         voltage = self.ecu.analog_input(port)

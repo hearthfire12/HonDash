@@ -66,7 +66,7 @@ def websocket_data_dict(
         "ectc": ecu.ectc,
         "wbv": ecu.wbv,
         "egrlv": ecu_analog_function("egrlv"),
-        "b6v": ecu.b6v,
+        "b6v": ecu_analog_function("b6v"),
         "baro": ecu.baro,
         "eld": ecu.eld,
         "psp": ecu.psp,

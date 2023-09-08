@@ -94,6 +94,26 @@
     ]
   },
   "egrlv": {
+    "tag": "not use",
+    "label": "OIL T.",
+    "unit": "celsius",
+    "formula": "prosport_temp_evo_jdm",
+    "suffix": "",
+    "max": 150,
+    "sectors": [
+      {
+        "lo": 94,
+        "hi": 150,
+        "color": "#cc2c24"
+      },
+      {
+        "lo": 0,
+        "hi": 94,
+        "color": "#46877f"
+      }
+    ]
+  },
+  "b6v": {
     "tag": "gauge2",
     "label": "OIL T.",
     "unit": "celsius",
