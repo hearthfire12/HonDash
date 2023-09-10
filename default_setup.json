@@ -11,8 +11,8 @@
     "nightTextColor": "#ffffff",
     "dayBackgroundGaugeColor": "#edebeb",
     "nightBackgroundGaugeColor": "#808080",
-    "tpsLowerThreshold": 20,
-    "tpsUpperThreshold": 30,
+    "tpsLowerThreshold": -100,
+    "tpsUpperThreshold": -100,
     "elapsedSeconds": 3
   },
   "odo": {
@@ -40,7 +40,7 @@
     ]
   },
   "tps": {
-    "tag": "not use",
+    "tag": "gauge6",
     "label": "TPS",
     "suffix": "",
     "max": 100,
@@ -51,14 +51,6 @@
         "color": "#46877f"
       }
     ]
-  },
-  "ectc": {
-    "tag": "gauge3",
-    "label": "ECT C."
-  },
-  "iatc": {
-    "tag": "gauge6",
-    "label": "IAT C."
   },
   "iat": {
     "tag": "not use",
@@ -73,6 +65,10 @@
         "color": "#46877f"
       }
     ]
+  },
+  "iatc": {
+    "tag": "not use",
+    "label": "IAT C."
   },
   "ect": {
     "tag": "gauge1",
@@ -92,6 +88,10 @@
         "color": "#46877f"
       }
     ]
+  },
+  "ectc": {
+    "tag": "not use",
+    "label": "ECT C."
   },
   "egrlv": {
     "tag": "not use",
@@ -114,7 +114,7 @@
     ]
   },
   "b6v": {
-    "tag": "gauge2",
+    "tag": "gauge4",
     "label": "OIL T.",
     "unit": "celsius",
     "formula": "prosport_temp_evo_jdm",
@@ -159,12 +159,11 @@
     ]
   },
   "map": {
-    "tag": "not use",
-    "unit": "bar",
-    "decimals": 1,
+    "tag": "gauge3",
+    "unit": "mbar",
     "label": "MAP",
     "suffix": "",
-    "max": 3,
+    "max": 1,
     "sectors": [
       {
         "lo": 0,
@@ -196,7 +195,7 @@
     "sectors": []
   },
   "an1": {
-    "tag": "gauge4",
+    "tag": "gauge2",
     "formula": "custom",
     "min_voltage": 0.5,
     "max_voltage": 4.5,
@@ -297,30 +296,35 @@
     "tag": "version"
   },
   "cl": {
-    "tag": "not use",
+    "tag": "icon3",
     "pathon": "cl_on.png",
-    "pathoff": "cl_off.png"
+    "pathoff": "cl_off.png",
+    "width": "50%"
   },
   "sectbl": {
     "tag": "not use",
     "pathon": "sec_on.png",
-    "pathoff": "sec_off.png"
+    "pathoff": "sec_off.png",
+    "width": "75%"
   },
   "vtec": {
-    "tag": "icon3",
+    "tag": "not use",
     "pathon": "vtec_on.png",
-    "pathoff": "vtec_off.png"
+    "pathoff": "vtec_off.png",
+    "width": "100%"
   },
   "fan": {
     "tag": "icon2",
     "pathon": "fan_on.png",
-    "pathoff": "fan_off.png"
+    "pathoff": "fan_off.png",
+    "width": "75%"
   },
   "hddlg": {
     "tag": "icon1",
     "pathon": "log_on.png",
     "pathoff": "log_off.png",
-    "autostart": false
+    "autostart": false,
+    "width": "75%"
   },
   "fmw": {
     "tag": "firmware_version"
