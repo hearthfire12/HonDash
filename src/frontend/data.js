@@ -30,6 +30,14 @@ ws.onmessage = function(event) {
           // if it's associated to a frontend tag
           window[setup[key]["tag"]]["refresh"](data["data"][key]);
         } catch (e) {}
+
+        // alerts
+        try {
+          // if it's associated to a frontend tag
+          if (window[setup[key]["tag"]]["isAlert"](data["data"][key])){
+            ws.send(JSON.stringify({ action: "alert" }));
+          }
+        } catch (e) {}
       }
     } else if (keys[0] == "action") {
       if (data["action"] == "refresh") {

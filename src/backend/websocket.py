@@ -110,9 +110,9 @@ class Websocket:
 
         for _ in range(3):
             self.buzzer.on()
-            sleep(1)
+            sleep(0.25)
             self.buzzer.off()
-            sleep(1)
+            sleep(0.25)
 
 
     async def _producer_handler(self, websocket):

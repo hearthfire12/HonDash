@@ -22,6 +22,11 @@ class Gauge {
     this.gauge.refresh(value);
   }
 
+  isAlert(value) {
+    let lo, hi = this.gauge.config.customSectors.ranges[0];
+    return value > lo && value < hi;
+  }
+
   setSectors(sectors) {
     this.gauge.config.customSectors = { length: true, ranges: sectors };
   }
