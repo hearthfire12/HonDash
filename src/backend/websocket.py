@@ -2,6 +2,9 @@ import asyncio
 import json
 import threading
 
+from gpiozero import Buzzer
+from time import sleep
+
 import websockets
 
 from backend.constants import WEBSOCKET_HOST, WEBSOCKET_PORT
@@ -12,9 +15,14 @@ from backend.devices.setup_validator.setup_validator import SetupValidator
 class Websocket:
     clients_connected = set()
     backend = None
+    buzzer = None
 
     def __init__(self, backend):
         self.backend = backend
+        try:
+            self.buzzer = Buzzer(26)
+        except:
+            print("Failed to initialize gpio buzzer!")
         self.websocket = websockets.serve(
             self._websocket_handler, WEBSOCKET_HOST, WEBSOCKET_PORT
         )
@@ -93,6 +101,19 @@ class Websocket:
                         }
                     )
                 )
+            elif data["action"] == "alert":
+                self._make_alert_sound()
+
+    def _make_alert_sound(self):
+        if not self.buzzer:
+            return
+
+        for _ in range(3):
+            self.buzzer.on()
+            sleep(1)
+            self.buzzer.off()
+            sleep(1)
+
 
     async def _producer_handler(self, websocket):
         """Keeps sending updated ecu data forever"""
