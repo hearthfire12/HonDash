@@ -16,8 +16,6 @@ class Gauge {
     };
 
     this.gauge = new JustGage(Object.assign({}, gaugeDefaults, args));
-    this.warning_threshold = Number.MAX_SAFE_INTEGER;
-    this.allow_warning = true;
   }
 
   refresh(value) {
@@ -26,16 +24,22 @@ class Gauge {
 
   setWarning(value) {
     this.warning_threshold = value;
+    this.warning_enabled = true;
+    this.warning_paused = false;
   }
 
   isWarning(value) {
-    if (this.allow_warning && value > warning_threshold) {
-      this.allow_warning = false;
-      return true;
+    if (!this.warning_enabled) return false;
+
+    if (value < this.warning_threshold){
+      this.warning_paused = false;
     }
 
-    this.allow_warning = true;
-
+    if (!this.warning_paused && value > this.warning_threshold) {
+      this.warning_paused = true;
+      return true;
+    }
+    
     return false;
   }
 
