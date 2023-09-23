@@ -78,13 +78,13 @@
     "max": 150,
     "sectors": [
       {
-        "lo": 94,
+        "lo": 98,
         "hi": 150,
         "color": "#cc2c24"
       },
       {
         "lo": 0,
-        "hi": 94,
+        "hi": 98,
         "color": "#46877f"
       }
     ]
@@ -122,13 +122,14 @@
     "max": 150,
     "sectors": [
       {
-        "lo": 94,
+        "lo": 124,
         "hi": 150,
         "color": "#cc2c24"
       },
       {
         "lo": 0,
-        "hi": 94,
+        "hi": 124
+        ,
         "color": "#46877f"
       }
     ]
@@ -163,11 +164,11 @@
     "unit": "mbar",
     "label": "MAP",
     "suffix": "",
-    "max": 1,
+    "max": 1400,
     "sectors": [
       {
         "lo": 0,
-        "hi": 3,
+        "hi": 1400,
         "color": "#46877f"
       }
     ]
@@ -178,7 +179,7 @@
   },
   "ltrim": {
     "tag": "not use",
-    "label": "S. TRIM"
+    "label": "L. TRIM"
   },
   "an0": {
     "tag": "gauge5",
