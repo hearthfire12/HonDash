@@ -16,15 +16,27 @@ class Gauge {
     };
 
     this.gauge = new JustGage(Object.assign({}, gaugeDefaults, args));
+    this.warning_threshold = Number.MAX_SAFE_INTEGER;
+    this.allow_warning = true;
   }
 
   refresh(value) {
     this.gauge.refresh(value);
   }
 
-  isAlert(value) {
-    let lo, hi = this.gauge.config.customSectors.ranges[0];
-    return value > lo && value < hi;
+  setWarning(value) {
+    this.warning_threshold = value;
+  }
+
+  isWarning(value) {
+    if (this.allow_warning && value > warning_threshold) {
+      this.allow_warning = false;
+      return true;
+    }
+
+    this.allow_warning = true;
+
+    return false;
   }
 
   setSectors(sectors) {

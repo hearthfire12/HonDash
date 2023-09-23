@@ -101,10 +101,10 @@ class Websocket:
                         }
                     )
                 )
-            elif data["action"] == "alert":
-                self._make_alert_sound()
+            elif data["action"] == "warning":
+                self._make_warning_sound()
 
-    def _make_alert_sound(self):
+    def _make_warning_sound(self):
         if not self.buzzer:
             return
 

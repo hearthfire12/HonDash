@@ -76,6 +76,7 @@
     "label": "ECT",
     "suffix": "",
     "max": 150,
+    "warning": 98,
     "sectors": [
       {
         "lo": 98,
@@ -120,6 +121,7 @@
     "formula": "prosport_temp_evo_jdm",
     "suffix": "",
     "max": 150,
+    "warning": 124,
     "sectors": [
       {
         "lo": 124,
