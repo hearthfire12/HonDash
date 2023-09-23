@@ -193,8 +193,19 @@
     "decimals": 1,
     "label": "OIL P.",
     "suffix": "",
-    "max": 10,
-    "sectors": []
+    "max": 8,
+    "sectors": [
+      {
+        "lo": 0,
+        "hi": 1,
+        "color": "#cc2c24"
+      },
+      {
+        "lo": 1,
+        "hi": 8,
+        "color": "#46877f"
+      }
+    ]
   },
   "an1": {
     "tag": "gauge2",
@@ -207,8 +218,19 @@
     "decimals": 1,
     "label": "ECT P.",
     "suffix": "",
-    "max": 10,
-    "sectors": []
+    "max": 3,
+    "sectors": [
+      {
+        "lo": 0,
+        "hi": 1.4,
+        "color": "#46877f"
+      },
+      {
+        "lo": 1.4,
+        "hi": 3,
+        "color": "#cc2c24"
+      }
+    ]
   },
   "an2": {
     "tag": "not use",
