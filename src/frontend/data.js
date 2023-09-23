@@ -46,7 +46,6 @@ ws.onmessage = function(event) {
 // asks for the setup as soon as possible
 ws.onopen = function(e) {
   ws.send(JSON.stringify({ action: "setup" }));
-  ws.send(JSON.stringify({ action: "alert" }));
 };
 
 // in case something blows up or connection gets closed, keep trying
