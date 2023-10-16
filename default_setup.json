@@ -122,6 +122,7 @@
     "suffix": "",
     "max": 150,
     "warning": 124,
+    "smoothing": 45,
     "sectors": [
       {
         "lo": 124,
@@ -194,6 +195,7 @@
     "label": "OIL P.",
     "suffix": "",
     "max": 8,
+    "smoothing": 45,
     "sectors": [
       {
         "lo": 0,
