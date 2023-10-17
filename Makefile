@@ -61,16 +61,9 @@ run: virtualenv
 	open http://localhost:8000/src/frontend/ &
 
 run_rpi:
+	chromium-browser --use-gl=egl --kiosk --check-for-update-interval=604800 --incognito http://hondash.local/ &
 	cp -n default_setup.json setup.json
 	sudo PYTHONPATH=src $(PYTHON) src/backend/main.py &
-	sleep 5
-	chromium-browser --use-gl=egl --kiosk --check-for-update-interval=604800 --incognito http://hondash.local/ &
-
-run_rpi_with_xserver:
-	startx -- -nocursor &
-	cp -n default_setup.json setup.json
-	sudo PYTHONPATH=src $(PYTHON) src/backend/main.py &
-	chromium-browser --use-gl=egl --kiosk --check-for-update-interval=604800 --incognito http://hondash.local/ &
 
 dummy:
 	cp -n default_setup.json setup.json || true
