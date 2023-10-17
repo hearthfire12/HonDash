@@ -1,1 +1,1 @@
-@reboot (export DISPLAY=:0 && cd /home/pi/HonDash/ && make run_rpi)
+@reboot (export DISPLAY=:0 && cd /home/pi/HonDash/ && make run_rpi_with_xserver)
