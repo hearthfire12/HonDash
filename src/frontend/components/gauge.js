@@ -22,7 +22,6 @@ class Gauge {
   }
 
   refresh(value) {
-    console.log("test")
     if (this.max_history === 0){
         this.gauge.refresh(value);
         return;
