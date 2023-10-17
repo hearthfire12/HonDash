@@ -35,7 +35,7 @@ OS=$(shell lsb_release -si 2>/dev/null || uname)
 system_dependencies:
 ifeq ($(OS), Ubuntu)
 	apt install --yes --no-install-recommends $(SYSTEM_DEPENDENCIES_UBUNTU)
-else ifeq ($(OS), Debian)
+else ifeq ($(OS), Linux)
 	apt install --yes --no-install-recommends $(SYSTEM_DEPENDENCIES_RASPBIAN)
 else ifeq ($(OS), Darwin)
 	brew install $(SYSTEM_DEPENDENCIES_MACOS)
