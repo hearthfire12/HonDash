@@ -7,22 +7,22 @@ server {
         server_name _;
 
         location / {
-                root /home/pi/Desktop/HonDash/src/frontend;
+                root /home/pi/HonDash/src/frontend;
         }
 
         location /setup {
-                root /home/pi/Desktop/HonDash/src/frontend;
+                root /home/pi/HonDash/src/frontend;
         }
 
         location /datalogs {
-                root /home/pi/Desktop/HonDash/src/frontend;
+                root /home/pi/HonDash/src/frontend;
         }
 
         location /node_modules {
-                root /home/pi/Desktop/HonDash;
+                root /home/pi/HonDash;
         }
 
         location /backend/devices/setup_validator/schema.json {
-                alias /home/pi/Desktop/HonDash/src/backend/devices/setup_validator/schema.json;
+                alias /home/pi/HonDash/src/backend/devices/setup_validator/schema.json;
         }
 }
