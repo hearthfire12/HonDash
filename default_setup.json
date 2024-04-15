@@ -1,5 +1,5 @@
 {
-  "template": "basic",
+  "template": "320x240",
   "screen": {
     "rotate": false
   },
@@ -11,8 +11,8 @@
     "nightTextColor": "#ffffff",
     "dayBackgroundGaugeColor": "#edebeb",
     "nightBackgroundGaugeColor": "#808080",
-    "tpsLowerThreshold": 20,
-    "tpsUpperThreshold": 30,
+    "tpsLowerThreshold": -100,
+    "tpsUpperThreshold": -100,
     "elapsedSeconds": 3
   },
   "odo": {
@@ -20,59 +20,8 @@
     "unit": "km",
     "value": 0
   },
-  "rpm": {
-    "tag": "bar1",
-    "max": 9000,
-    "sectors": [
-      {
-        "lo": 8000,
-        "hi": 9000,
-        "color": "#d9414c"
-      },
-      {
-        "lo": 6000,
-        "hi": 8000,
-        "color": "#ffc81b"
-      },
-      {
-        "lo": 0,
-        "hi": 6000,
-        "color": "#21f973"
-      }
-    ]
-  },
-  "eth": {
-    "tag": "gauge4",
-    "label": "ETH",
-    "suffix": "",
-    "max": 100,
-    "sectors": [
-      {
-        "lo": 0,
-        "hi": 100,
-        "color": "#46877f"
-      }
-    ]
-  },
-  "vss": {
-    "tag": "speed",
-    "unit": "kmh"
-  },
-  "cam": {
-    "tag": "gauge7",
-    "label": "CAM",
-    "suffix": "",
-    "max": 100,
-    "sectors": [
-      {
-        "lo": 0,
-        "hi": 100,
-        "color": "#46877f"
-      }
-    ]
-  },
   "bat": {
-    "tag": "gauge6",
+    "tag": "not use",
     "decimals": 1,
     "label": "BATTERY",
     "suffix": "",
@@ -91,7 +40,7 @@
     ]
   },
   "tps": {
-    "tag": "gauge8",
+    "tag": "gauge6",
     "label": "TPS",
     "suffix": "",
     "max": 100,
@@ -104,7 +53,7 @@
     ]
   },
   "iat": {
-    "tag": "gauge2",
+    "tag": "not use",
     "unit": "celsius",
     "label": "IAT",
     "suffix": "",
@@ -117,10 +66,39 @@
       }
     ]
   },
+  "iatc": {
+    "tag": "not use",
+    "label": "IAT C."
+  },
   "ect": {
     "tag": "gauge1",
     "unit": "celsius",
     "label": "ECT",
+    "suffix": "",
+    "max": 150,
+    "warning": 98,
+    "sectors": [
+      {
+        "lo": 98,
+        "hi": 150,
+        "color": "#cc2c24"
+      },
+      {
+        "lo": 0,
+        "hi": 98,
+        "color": "#46877f"
+      }
+    ]
+  },
+  "ectc": {
+    "tag": "not use",
+    "label": "ECT C."
+  },
+  "egrlv": {
+    "tag": "not use",
+    "label": "OIL T.",
+    "unit": "celsius",
+    "formula": "prosport_temp_evo_jdm",
     "suffix": "",
     "max": 150,
     "sectors": [
@@ -136,8 +114,30 @@
       }
     ]
   },
+  "b6v": {
+    "tag": "gauge4",
+    "label": "OIL T.",
+    "unit": "celsius",
+    "formula": "prosport_temp_evo_jdm",
+    "suffix": "",
+    "max": 150,
+    "warning": 124,
+    "smoothing": 45,
+    "sectors": [
+      {
+        "lo": 124,
+        "hi": 150,
+        "color": "#cc2c24"
+      },
+      {
+        "lo": 0,
+        "hi": 124,
+        "color": "#46877f"
+      }
+    ]
+  },
   "o2": {
-    "tag": "gauge3",
+    "tag": "not use",
     "unit": "afr",
     "decimals": 1,
     "label": "AFR",
@@ -162,47 +162,77 @@
     ]
   },
   "map": {
+    "tag": "gauge3",
+    "unit": "mbar",
+    "label": "MAP",
+    "suffix": "",
+    "max": 1400,
+    "sectors": [
+      {
+        "lo": 0,
+        "hi": 1400,
+        "color": "#46877f"
+      }
+    ]
+  },
+  "strim": {
+    "tag": "not use",
+    "label": "S. TRIM"
+  },
+  "ltrim": {
+    "tag": "not use",
+    "label": "L. TRIM"
+  },
+  "an0": {
     "tag": "gauge5",
+    "formula": "custom",
+    "min_voltage": 0.5,
+    "max_voltage": 4.5,
+    "min_value": 0,
+    "max_value": 10,
     "unit": "bar",
     "decimals": 1,
-    "label": "MAP",
+    "label": "OIL P.",
+    "suffix": "",
+    "max": 8,
+    "smoothing": 45,
+    "sectors": [
+      {
+        "lo": 0,
+        "hi": 1,
+        "color": "#cc2c24"
+      },
+      {
+        "lo": 1,
+        "hi": 8,
+        "color": "#46877f"
+      }
+    ]
+  },
+  "an1": {
+    "tag": "gauge2",
+    "formula": "custom",
+    "min_voltage": 0.5,
+    "max_voltage": 4.5,
+    "min_value": 0,
+    "max_value": 10,
+    "unit": "bar",
+    "decimals": 1,
+    "label": "ECT P.",
     "suffix": "",
     "max": 3,
     "sectors": [
       {
         "lo": 0,
-        "hi": 3,
+        "hi": 1.4,
         "color": "#46877f"
+      },
+      {
+        "lo": 1.4,
+        "hi": 3,
+        "color": "#cc2c24"
       }
     ]
-  },
-  "an0": {
-    "tag": "not use",
-    "formula": "custom",
-    "min_voltage": 0,
-    "max_voltage": 5,
-    "min_value": 0,
-    "max_value": 100,
-    "unit": "per cent",
-    "decimals": 0,
-    "label": "",
-    "suffix": "%",
-    "max": 100,
-    "sectors": []
-  },
-  "an1": {
-    "tag": "not use",
-    "formula": "custom",
-    "min_voltage": 0,
-    "max_voltage": 5,
-    "min_value": 0,
-    "max_value": 100,
-    "unit": "per cent",
-    "decimals": 0,
-    "label": "",
-    "suffix": "%",
-    "max": 100,
-    "sectors": []
   },
   "an2": {
     "tag": "not use",
@@ -214,7 +244,7 @@
     "unit": "per cent",
     "decimals": 0,
     "label": "",
-    "suffix": "%",
+    "suffix": "",
     "max": 100,
     "sectors": []
   },
@@ -228,7 +258,7 @@
     "unit": "per cent",
     "decimals": 0,
     "label": "",
-    "suffix": "%",
+    "suffix": "",
     "max": 100,
     "sectors": []
   },
@@ -242,7 +272,7 @@
     "unit": "per cent",
     "decimals": 0,
     "label": "",
-    "suffix": "%",
+    "suffix": "",
     "max": 100,
     "sectors": []
   },
@@ -256,7 +286,7 @@
     "unit": "per cent",
     "decimals": 0,
     "label": "",
-    "suffix": "%",
+    "suffix": "",
     "max": 100,
     "sectors": []
   },
@@ -291,32 +321,36 @@
   "ver": {
     "tag": "version"
   },
-  "fan": {
-    "tag": "icon2",
-    "pathon": "fan_on.svg",
-    "pathoff": "fan_off.svg"
-  },
-  "mil": {
-    "tag": "icon1",
-    "pathon": "check_engine_on.svg",
-    "pathoff": "check_engine_off.svg"
-  },
-  "scs": {
+  "cl": {
     "tag": "icon3",
-    "pathon": "scs_on.png",
-    "pathoff": "scs_off.png"
+    "pathon": "cl_on.png",
+    "pathoff": "cl_off.png",
+    "width": "50%"
+  },
+  "sectbl": {
+    "tag": "not use",
+    "pathon": "sec_on.png",
+    "pathoff": "sec_off.png",
+    "width": "75%"
   },
   "vtec": {
-    "tag": "icon4"
+    "tag": "not use",
+    "pathon": "vtec_on.png",
+    "pathoff": "vtec_off.png",
+    "width": "100%"
   },
-  "gear": {
-    "tag": "gear"
+  "fan": {
+    "tag": "icon2",
+    "pathon": "fan_on.png",
+    "pathoff": "fan_off.png",
+    "width": "75%"
   },
   "hddlg": {
-    "tag": "icon5",
-    "pathon": "hddlg_on.svg",
-    "pathoff": "hddlg_off.svg",
-    "autostart": false
+    "tag": "icon1",
+    "pathon": "log_on.png",
+    "pathoff": "log_off.png",
+    "autostart": false,
+    "width": "75%"
   },
   "fmw": {
     "tag": "firmware_version"

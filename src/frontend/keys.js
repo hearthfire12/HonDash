@@ -1,4 +1,4 @@
-const SCREENS = ["basic.html", "animalillo.html", "datalogs"];
+const SCREENS = ["basic.html", "animalillo.html", "320x240.html", "datalogs"];
 const DEBUG_SCREENS = ["debug/websocket.html", "debug/raw.html"];
 
 function nextScreen(screens) {
@@ -18,6 +18,7 @@ function nextScreen(screens) {
 }
 
 document.addEventListener("keydown", function(event) {
+
   if (event.key == "0") {
     ws.send(JSON.stringify({ action: "toggle_datalog" }));
   } else if (event.key == "1") {

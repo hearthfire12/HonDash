@@ -7,12 +7,15 @@ WAIT_FOR_RECONNECTION = 100
 class Ecu:
     def __init__(self):
         self.retries = 0
-        kpro = Kpro()
-        if kpro.status:
-            self.ecu = kpro
-        else:
-            s300 = S300()
-            self.ecu = s300 if s300.status else None
+        try:
+            kpro = Kpro()
+            if kpro.status:
+                self.ecu = kpro
+            else:
+                s300 = S300()
+                self.ecu = s300 if s300.status else None
+        except:
+            self.ecu = None
 
     def _get_value_from_ecu(self, value, fallback=0):
         if self.ecu is not None and self.ecu.status:
@@ -156,3 +159,149 @@ class Ecu:
             return result
         else:
             return result(channel)
+    """----------------------------------------------------------------------------------
+    AJ Edits go below here
+    """
+    @property
+    def inj(self):
+        return self._get_value_from_ecu("inj")   #TODO Needs Units? ms
+
+    @property
+    def injduty(self):
+        return self._get_value_from_ecu("injduty")
+
+    @property
+    def igadv(self):
+        return self._get_value_from_ecu("igadv")
+        
+    @property
+    def pho2sv(self):
+        return self._get_value_from_ecu("pho2sv")
+        
+    @property
+    def strim(self):
+        return self._get_value_from_ecu("strim")
+       
+    @property
+    def ltrim(self):
+       return self._get_value_from_ecu("ltrim")
+
+    @property
+    def iatc(self):
+        return self._get_value_from_ecu("iatc")
+
+    @property
+    def ectc(self):
+        return self._get_value_from_ecu("ectc")
+
+    @property
+    def wbv(self):
+        return self._get_value_from_ecu("wbv")
+
+    @property
+    def egrlv(self):
+        return self._get_value_from_ecu("egrlv")
+
+    @property
+    def b6v(self):
+        return self._get_value_from_ecu("b6v")
+
+    @property
+    def baro(self):
+        return self._get_value_from_ecu("baro", {"bar": 0, "mbar": 0, "psi": 0})
+
+    @property
+    def eld(self):
+        return self._get_value_from_ecu("eld")
+
+    @property
+    def psp(self):
+        return self._get_value_from_ecu("psp", False)
+
+    @property
+    def a10(self):
+        return self._get_value_from_ecu("a10", False)
+
+    @property
+    def cl(self):
+        return self._get_value_from_ecu("cl", False)
+
+    @property
+    def altc(self):
+        return self._get_value_from_ecu("altc", False)
+
+    @property
+    def iab(self):
+        return self._get_value_from_ecu("iab", False)
+
+    @property
+    def pcs(self):
+        return self._get_value_from_ecu("pcs", False)
+
+    @property
+    def n1arm(self):
+        return self._get_value_from_ecu("n1arm", False)
+
+    @property
+    def n1on(self):
+        return self._get_value_from_ecu("n1on", False)
+
+    @property
+    def n2arm(self):
+        return self._get_value_from_ecu("n2arm", False)
+
+    @property
+    def n2on(self):
+        return self._get_value_from_ecu("n2on", False)
+
+    @property
+    def n3arm(self):
+        return self._get_value_from_ecu("n3arm", False)
+
+    @property
+    def n3on(self):
+        return self._get_value_from_ecu("n3on", False)
+
+    @property
+    def disterr(self):
+        return self._get_value_from_ecu("disterr", False)
+
+    @property
+    def sectbl(self):
+        return self._get_value_from_ecu("sectbl", False)
+
+    @property
+    def secinj(self):
+        return self._get_value_from_ecu("secinj", False)
+
+    @property
+    def revl(self):
+        return self._get_value_from_ecu("revl", False)
+
+    @property
+    def lnchc(self):
+        return self._get_value_from_ecu("lnchc", False)
+
+    @property
+    def lnchr(self):
+        return self._get_value_from_ecu("lnchr", False)
+
+    @property
+    def bstc(self):
+        return self._get_value_from_ecu("bstc", False)
+
+    @property
+    def shftc(self):
+        return self._get_value_from_ecu("shftc", False)
+
+    @property
+    def ignc(self):
+        return self._get_value_from_ecu("ignc", False)
+
+    @property
+    def obdl(self):
+        return self._get_value_from_ecu("obdl", False)
+
+    @property
+    def pwm(self):           
+        return self._get_value_from_ecu("pwm")

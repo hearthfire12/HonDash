@@ -16,10 +16,51 @@ class Gauge {
     };
 
     this.gauge = new JustGage(Object.assign({}, gaugeDefaults, args));
+
+    this.previous_values = [];
+    this.max_history = 0;
   }
 
   refresh(value) {
-    this.gauge.refresh(value);
+    if (this.max_history === 0){
+        this.gauge.refresh(value);
+        return;
+    }
+
+    // remove first element
+    if (this.previous_values.length === this.max_history - 1){
+        this.previous_values.shift();
+    }
+
+    // populating historic values
+    if (this.previous_values.length < this.max_history){
+        this.previous_values.push(value);
+    }
+
+    let moving_average = this.previous_values.reduce(
+        (accumulator, currentValue) => accumulator + currentValue, 0) / this.previous_values.length;
+    this.gauge.refresh(moving_average);
+  }
+
+  setWarning(value) {
+    this.warning_threshold = value;
+    this.warning_enabled = true;
+    this.warning_paused = false;
+  }
+
+  isWarning(value) {
+    if (!this.warning_enabled) return false;
+
+    if (value < this.warning_threshold){
+      this.warning_paused = false;
+    }
+
+    if (!this.warning_paused && value > this.warning_threshold) {
+      this.warning_paused = true;
+      return true;
+    }
+    
+    return false;
   }
 
   setSectors(sectors) {
@@ -54,5 +95,9 @@ class Gauge {
   setBackgroundColor(color) {
     this.gauge.config.gaugeColor = color;
     this.gauge.gauge.attr({ fill: this.gauge.config.gaugeColor });
+  }
+
+  setSmoothing(factor){
+    this.max_history = factor;
   }
 }

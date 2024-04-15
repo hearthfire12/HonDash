@@ -35,7 +35,7 @@ OS=$(shell lsb_release -si 2>/dev/null || uname)
 system_dependencies:
 ifeq ($(OS), Ubuntu)
 	apt install --yes --no-install-recommends $(SYSTEM_DEPENDENCIES_UBUNTU)
-else ifeq ($(OS), Debian)
+else ifeq ($(OS), Linux)
 	apt install --yes --no-install-recommends $(SYSTEM_DEPENDENCIES_RASPBIAN)
 else ifeq ($(OS), Darwin)
 	brew install $(SYSTEM_DEPENDENCIES_MACOS)
@@ -61,10 +61,9 @@ run: virtualenv
 	open http://localhost:8000/src/frontend/ &
 
 run_rpi:
+	chromium-browser --use-gl=egl --kiosk --check-for-update-interval=604800 --incognito http://hondash.local/ &
 	cp -n default_setup.json setup.json
 	sudo PYTHONPATH=src $(PYTHON) src/backend/main.py &
-	sleep 5
-	chromium-browser --use-gl=egl --kiosk --check-for-update-interval=604800 --incognito http://hondash.local/ &
 
 dummy:
 	cp -n default_setup.json setup.json || true

@@ -29,6 +29,10 @@ ws.onmessage = function(event) {
         try {
           // if it's associated to a frontend tag
           window[setup[key]["tag"]]["refresh"](data["data"][key]);
+          // trigger alert sound
+          if (window[setup[key]["tag"]]["isWarning"](data["data"][key])){
+            ws.send(JSON.stringify({ action: "warning" }));
+          }
         } catch (e) {}
       }
     } else if (keys[0] == "action") {

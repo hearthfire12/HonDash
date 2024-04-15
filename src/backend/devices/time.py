@@ -8,3 +8,9 @@ class Time:
     def get_time(self):
         now = time.time() - self.initial_time
         return f"{str(time.gmtime(now)[3]).zfill(2)}:{str(time.gmtime(now)[4]).zfill(2)}:{str(time.gmtime(now)[5]).zfill(2)}"
+
+class CurrentLocalTime:
+
+    def get_time(self):
+        now = time.time()
+        return f"{str(time.localtime(now)[3]).zfill(2)}:{str(time.localtime(now)[4]).zfill(2)}:{str(time.localtime(now)[5]).zfill(2)}"
